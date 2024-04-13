@@ -1,0 +1,8 @@
+res://Main/yosha/yosha.tscn
+res://Main/open_scene.tscn
+res://Main/level_scene.tscn
+res://Main/open_scene.gd
+res://addons/awesome_scene_manager/autoloads/SceneManager.gd
+res://Main/level_scene.gd
+res://addons/awesome_scene_manager/awesome_scene_manager.gd
+res://addons/awesome_scene_manager/autoloads/SceneManager.tscn

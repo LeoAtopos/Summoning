@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://t3d0vva361re"]
+
+[ext_resource type="Texture2D" uid="uid://dn2ujcxvosowx" path="res://icon.svg" id="1_5h4pk"]
+[ext_resource type="Script" path="res://Main/level_scene.gd" id="1_c5ef8"]
+[ext_resource type="PackedScene" uid="uid://ddf35qbku2f8s" path="res://Main/yosha/yosha.tscn" id="2_k8lhf"]
+
+[node name="LevelScene" type="Node2D"]
+script = ExtResource("1_c5ef8")
+
+[node name="yosha" parent="." instance=ExtResource("2_k8lhf")]
+
+[node name="Icon" type="Sprite2D" parent="."]
+position = Vector2(860, 382)
+texture = ExtResource("1_5h4pk")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="ColorRect" type="ColorRect" parent="Control"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
