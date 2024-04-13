@@ -1,0 +1,33 @@
+[gd_scene load_steps=6 format=3 uid="uid://bmuwsrqycjdv1"]
+
+[ext_resource type="PackedScene" uid="uid://2tq8gatkepij" path="res://Levels/level1/bound.tscn" id="1_0v8no"]
+[ext_resource type="Script" path="res://Levels/level2/level_2.gd" id="1_bpee7"]
+[ext_resource type="PackedScene" uid="uid://ddf35qbku2f8s" path="res://Main/yosha/yosha.tscn" id="2_hit3q"]
+[ext_resource type="PackedScene" uid="uid://c6ge50mmqm61j" path="res://Main/wizzard/wizzard.tscn" id="3_iyyt6"]
+[ext_resource type="PackedScene" uid="uid://cvnt5fn66o8lf" path="res://Levels/common/port.tscn" id="4_n80qe"]
+
+[node name="level2" type="Node2D"]
+script = ExtResource("1_bpee7")
+
+[node name="bound" parent="." instance=ExtResource("1_0v8no")]
+position = Vector2(-69, -442)
+
+[node name="bound4" parent="." instance=ExtResource("1_0v8no")]
+position = Vector2(-69, 451)
+
+[node name="bound2" parent="." instance=ExtResource("1_0v8no")]
+position = Vector2(-478, 40)
+
+[node name="bound3" parent="." instance=ExtResource("1_0v8no")]
+position = Vector2(498, 40)
+
+[node name="yosha" parent="." instance=ExtResource("2_hit3q")]
+
+[node name="wizzard" parent="." instance=ExtResource("3_iyyt6")]
+position = Vector2(-48, -17)
+
+[node name="port" parent="." instance=ExtResource("4_n80qe")]
+position = Vector2(158, -2)
+rotation = -1.5708
+
+[connection signal="body_entered" from="port" to="." method="_on_port_body_entered"]

@@ -1,0 +1,27 @@
+[gd_scene load_steps=5 format=3 uid="uid://fcdda56oa3j6"]
+
+[ext_resource type="Script" path="res://Levels/level3/level_3.gd" id="1_dk3ev"]
+[ext_resource type="Texture2D" uid="uid://bjc2sl3wobod5" path="res://Levels/level3/pusher.png" id="2_1bg4q"]
+[ext_resource type="Texture2D" uid="uid://c3hwj5rd4qtqo" path="res://Levels/level3/box.png" id="3_b07s5"]
+[ext_resource type="Texture2D" uid="uid://taslhuby7qyo" path="res://Levels/level3/target.png" id="4_38wy8"]
+
+[node name="Level3" type="Node2D"]
+script = ExtResource("1_dk3ev")
+
+[node name="Pusher" type="Sprite2D" parent="."]
+texture = ExtResource("2_1bg4q")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+visibility_layer = 7
+zoom = Vector2(3, 3)
+position_smoothing_speed = 50.0
+drag_horizontal_enabled = true
+drag_vertical_enabled = true
+
+[node name="Box" type="Sprite2D" parent="."]
+position = Vector2(-115, -1)
+texture = ExtResource("3_b07s5")
+
+[node name="Target" type="Sprite2D" parent="."]
+position = Vector2(108, -1)
+texture = ExtResource("4_38wy8")

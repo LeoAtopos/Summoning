@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://2tq8gatkepij"]
+
+[ext_resource type="Texture2D" uid="uid://dswtwmmq3gmx8" path="res://Levels/level1/bound_sprite.png" id="1_b5c8c"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rrryu"]
+size = Vector2(32, 32)
+
+[node name="bound" type="StaticBody2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1.49012e-07, 1)
+scale = Vector2(20, 20)
+shape = SubResource("RectangleShape2D_rrryu")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(0.345098, 0.345098, 0.345098, 1)
+scale = Vector2(20, 20)
+texture = ExtResource("1_b5c8c")

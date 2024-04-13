@@ -1,0 +1,37 @@
+[gd_scene load_steps=6 format=3 uid="uid://c6ge50mmqm61j"]
+
+[ext_resource type="Texture2D" uid="uid://cynj1v5ehexkn" path="res://Main/wizzard/wizzard-Sheet.png" id="1_nvp3j"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hg1e6"]
+atlas = ExtResource("1_nvp3j")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2oc66"]
+atlas = ExtResource("1_nvp3j")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0ajjm"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hg1e6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2oc66")
+}],
+"loop": true,
+"name": &"default",
+"speed": 2.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_je21p"]
+
+[node name="wizzard" type="CharacterBody2D"]
+
+[node name="wizz" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_0ajjm")
+autoplay = "default"
+frame_progress = 0.158904
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_je21p")

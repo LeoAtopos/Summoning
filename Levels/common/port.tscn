@@ -1,0 +1,41 @@
+[gd_scene load_steps=6 format=3 uid="uid://cvnt5fn66o8lf"]
+
+[ext_resource type="Texture2D" uid="uid://c81cw8coifmyq" path="res://Levels/level1/port-Sheet.png" id="1_40m3c"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sgfv8"]
+atlas = ExtResource("1_40m3c")
+region = Rect2(0, 0, 32, 45)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3yicn"]
+atlas = ExtResource("1_40m3c")
+region = Rect2(32, 0, 32, 45)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ert76"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sgfv8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3yicn")
+}],
+"loop": true,
+"name": &"default",
+"speed": 2.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_dsep3"]
+radius = 4.0
+height = 8.0
+
+[node name="port" type="Area2D"]
+position = Vector2(85, 10)
+
+[node name="port" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_ert76")
+autoplay = "default"
+frame_progress = 0.0122099
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 6)
+shape = SubResource("CapsuleShape2D_dsep3")

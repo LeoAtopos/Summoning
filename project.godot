@@ -21,7 +21,7 @@ resources_spreadsheet_view/context_menu_on_leftclick=false
 [application]
 
 config/name="RPGBASE"
-run/main_scene="res://Main/open_scene.tscn"
+run/main_scene="res://Levels/level1/level_1.tscn"
 config/features=PackedStringArray("4.2", "GL Compatibility")
 config/icon="res://icon.svg"
 
@@ -30,11 +30,20 @@ config/icon="res://icon.svg"
 GuiTransitions="*res://addons/simple-gui-transitions/singleton.gd"
 SceneManager="*res://addons/awesome_scene_manager/autoloads/SceneManager.tscn"
 Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
+Sgm="*res://Main/SGM.gd"
 
 [dialogic]
 
-directories/dch_directory={}
-directories/dtl_directory={}
+directories/dch_directory={
+"wizzard_character": "res://Main/wizzard/wizzard_character.dch"
+}
+directories/dtl_directory={
+"level1_portout_line": "res://Levels/level1/level1_portout_line.dtl",
+"level2_open_line": "res://Levels/level2/level2_open_line.dtl",
+"level3_open_line": "res://Levels/level3/level3_open_line.dtl",
+"level3_portout_line": "res://Levels/level3/level3_portout_line.dtl",
+"open_line": "res://Levels/level1/open_line.dtl"
+}
 
 [display]
 
@@ -97,5 +106,7 @@ esc={
 
 [rendering]
 
+textures/canvas_textures/default_texture_filter=0
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"
+environment/defaults/default_clear_color=Color(0, 0, 0, 1)
