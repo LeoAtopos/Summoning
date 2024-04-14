@@ -23,3 +23,6 @@ func cut2level2():
 
 func cut2level4():
 	SceneManager.change_scene("res://Levels/level4/level_4.tscn",SceneManager.Transitions.FADE)
+
+func level4_call_help():
+	get_node("/root/Level4").wizzard_jump_in()

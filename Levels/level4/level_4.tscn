@@ -1,10 +1,12 @@
-[gd_scene load_steps=6 format=3 uid="uid://rc2jy7ad38ca"]
+[gd_scene load_steps=8 format=3 uid="uid://rc2jy7ad38ca"]
 
 [ext_resource type="PackedScene" uid="uid://2tq8gatkepij" path="res://Levels/level1/bound.tscn" id="1_44uq0"]
 [ext_resource type="Script" path="res://Levels/level4/level_4.gd" id="1_513fp"]
 [ext_resource type="PackedScene" uid="uid://ddf35qbku2f8s" path="res://Main/yosha/yosha.tscn" id="2_dkiy3"]
 [ext_resource type="PackedScene" uid="uid://c6ge50mmqm61j" path="res://Main/wizzard/wizzard.tscn" id="3_qdqqs"]
 [ext_resource type="PackedScene" uid="uid://cvnt5fn66o8lf" path="res://Levels/common/port.tscn" id="4_0aqwn"]
+[ext_resource type="PackedScene" uid="uid://dv8u2juovctad" path="res://Levels/level4/ghost.tscn" id="6_mnsfx"]
+[ext_resource type="PackedScene" uid="uid://bqq4njm1oqfk2" path="res://Levels/level4/devel.tscn" id="7_t3dvt"]
 
 [node name="Level4" type="Node2D"]
 script = ExtResource("1_513fp")
@@ -30,3 +32,11 @@ position = Vector2(-139, -35)
 [node name="port" parent="." instance=ExtResource("4_0aqwn")]
 position = Vector2(158, -2)
 rotation = -1.5708
+
+[node name="ghost" parent="." instance=ExtResource("6_mnsfx")]
+position = Vector2(141, 72)
+
+[node name="devel" parent="." instance=ExtResource("7_t3dvt")]
+position = Vector2(132, -77)
+
+[connection signal="body_entered" from="port" to="." method="_on_port_body_entered"]

@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://cwhj4fiw5v8yr"]
+
+[ext_resource type="Texture2D" uid="uid://beiiuvewlqh7h" path="res://Levels/level4/fireball.png" id="1_u0834"]
+
+[node name="fireball" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_u0834")

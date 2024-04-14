@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://dbcgfv13wtjvj"]
+
+[ext_resource type="Script" path="res://Levels/level5/level_5.gd" id="1_q86r2"]
+
+[node name="Level5" type="Node2D"]
+script = ExtResource("1_q86r2")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+visibility_layer = 7
+zoom = Vector2(3, 3)
+position_smoothing_speed = 50.0
+drag_horizontal_enabled = true
+drag_vertical_enabled = true

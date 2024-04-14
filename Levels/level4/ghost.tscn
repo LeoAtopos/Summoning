@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://dv8u2juovctad"]
+
+[ext_resource type="Texture2D" uid="uid://dmibsnm1cmrlb" path="res://Levels/level4/ghost.png" id="1_d3nbi"]
+
+[node name="ghost" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_d3nbi")

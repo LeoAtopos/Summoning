@@ -1,0 +1,32 @@
+[gd_scene load_steps=5 format=3 uid="uid://bqq4njm1oqfk2"]
+
+[ext_resource type="Texture2D" uid="uid://f41i5747r7b8" path="res://Levels/level4/devil-Sheet.png" id="1_p2aoy"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h6wes"]
+atlas = ExtResource("1_p2aoy")
+region = Rect2(0, 0, 50, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pp1rr"]
+atlas = ExtResource("1_p2aoy")
+region = Rect2(50, 0, 50, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_l8c7j"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h6wes")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pp1rr")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="devel" type="Node2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_l8c7j")
+autoplay = "default"
+frame_progress = 0.532402
