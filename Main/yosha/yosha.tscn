@@ -1,6 +1,6 @@
 [gd_scene load_steps=25 format=3 uid="uid://ddf35qbku2f8s"]
 
-[ext_resource type="Script" path="res://main/yosha/yosha.gd" id="1_b8p0h"]
+[ext_resource type="Script" path="res://Main/yosha/yosha.gd" id="1_uoofa"]
 [ext_resource type="Texture2D" uid="uid://brjt8jvcf7o16" path="res://Main/yosha/yosha-Sheet.png" id="2_2mwo8"]
 [ext_resource type="Script" path="res://addons/godot_state_charts/state_chart.gd" id="3_ooetd"]
 [ext_resource type="Script" path="res://addons/godot_state_charts/parallel_state.gd" id="4_ye0v2"]
@@ -131,7 +131,7 @@ radius = 11.0
 height = 22.0
 
 [node name="yosha" type="CharacterBody2D"]
-script = ExtResource("1_b8p0h")
+script = ExtResource("1_uoofa")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 visibility_layer = 7
@@ -142,8 +142,9 @@ drag_vertical_enabled = true
 
 [node name="Yosha" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_kpgy8")
-animation = &"walk"
-frame_progress = 0.0445939
+animation = &"idle"
+frame = 4
+frame_progress = 0.851635
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_fqpgf")

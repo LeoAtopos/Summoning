@@ -1,7 +1,7 @@
 OK, NEW GAME! Let's play.
 Wait a minite. I am a Green BALL?
 Weird. Wonder how it'll end.
-However, I feal like 「W A S D」 will do the move.
+However, I feal like "W A S D" will do the move.
 ( USE WASD KEYS TO MOVE )
 do Sgm.call_yosha_canMove()
 [end_timeline]
