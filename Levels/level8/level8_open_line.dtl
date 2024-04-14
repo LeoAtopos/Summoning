@@ -1,4 +1,14 @@
-lets golf
-ok go
+No way, golf!
+wizzard_character: Golf? Is it very hard?
+- No
+	I'm good at it.
+	Just take some time.
+- Yes
+	It's one of those action games.
+	You have to practice a lot.
+wizzard_character: I am depending on you.
+I feel the boss is right behind this door.
+I know.
+Let's do it.
 do Sgm.golf_start()
 [end_timeline]

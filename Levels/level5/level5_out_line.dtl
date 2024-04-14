@@ -1,3 +1,10 @@
-wizzard_character: hei, win
+( THE SEAL HAS BEEN BROKEN, AND THE DOOR TO THE DEEPER LEVEL IS OPENED )
+wizzard_character: Great! Good Job, Gamer.
+I start to wonder what is this all about.
+wizzard_character: I summoned you for your Gamer skill to get through this dungeon.
+Yeah, but why these games? Why me? Who built this dungeon?
+wizzard_character: One ancient rumor says it was the most powerful God of this world built this dungeon.
+Powerful God... Mini games...
+Moving on.
 do Sgm.cut2level6()
 [end_timeline]

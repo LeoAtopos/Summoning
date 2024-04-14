@@ -1,3 +1,25 @@
-chit chat
+OK, new game.
+wizzard_character: I got it! I figure it out.
+What?
+wizzard_character: That game you just played.
+wizzard_character: I think what you just did is that you have to create order from chaos by random pick.
+Yeah, yeah, yeah, majong is beautiful.
+if {mouse} == true:
+	wizzard_character: How I wish I could play if I can use mouse.
+else:
+	wizzard_character: How I wish to play if I can use touchpad.
+You know what.
+- You are a Gamer now
+	You really are a good Gamer.
+- You played well too
+	You saved me mutiple times.
+It's talent to summon a Gamer
+wizzard_character: Yeah, no one studied those books about summoning from the earth world.
+wizzard_character: They all just want to summon dragons or demons.
+Boring...
+Dragons can't type keyboard.
+wizzard_character: Really?
+Oh...you don't know...keyboard...OK.
+Time to rush boss.
 do Sgm.call_yosha_canMove()
 [end_timeline]

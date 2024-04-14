@@ -3,6 +3,9 @@ extends Node2D
 @onready var gamer = $yosha
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	var mo = gamer.modulate
+	mo.a = 0
+	gamer.modulate = mo
 	Dialogic.start("level2_open_line")
 
 

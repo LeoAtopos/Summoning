@@ -137,7 +137,7 @@ texture = ExtResource("1_5cgfk")
 shape = SubResource("RectangleShape2D_agjix")
 
 [node name="flag" type="AnimatedSprite2D" parent="."]
-position = Vector2(263, -30)
+position = Vector2(266, -30)
 sprite_frames = SubResource("SpriteFrames_732gk")
 autoplay = "default"
 frame_progress = 0.0691177

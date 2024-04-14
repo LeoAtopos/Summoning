@@ -1,3 +1,14 @@
-thank you
+wizzard_character: Are you OK? Any hurt?
+Thank you, I'm OK.
+wizzard_character: It is the most dangerous dungeon of all the continent.
+wizzard_character: Be careful.
+wizzard_character: I can not lose you.
+- Sorry for that
+	I'll be more careful.
+- Good to have you
+	Lucky, I'm with you.
+wizzard_character: It'll need both of us to get throught this dungeon.
+OK
+wizzard_character: Let's move.
 do Sgm.call_yosha_canMove()
 [end_timeline]

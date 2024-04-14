@@ -1,4 +1,28 @@
-paopao shoot
-yy
+wizzard_character: Moving runes.
+wizzard_character: Use keyboard again?
+Nah...I think not this time
+wizzard_character: Then, What will Gamer use?
+- Mouse
+	set {mouse} = true
+	A Mouse will do.
+	wizzard_character: Shit! No way. I hate mouse. Don't!
+	Ah, you are afraid of mice, don't you?
+	wizzard_character: No...I just.
+	wizzard_character: I...
+	How can you fight in a dungeon, and also afraid of mice?
+	wizzard_character: Not your bussiness.
+	Fear none. Mouse is just the name of my might weapon.
+	wizzard_character: OK.
+	wizzard_character: Good.
+- Touchpad
+	set {mouse} = 
+	I am using touchpad
+	wizzard_character: Touch what?
+	Never mind. Just watch
+	wizzard_character: I need to learn, you have to teach, after all this
+	How much time can your summoning last?
+	wizzard_character: Depends on your will
+	How can I never thought of that.
+	(Seriously) Touch Pad!
 do Sgm.call_yosha_canMove()
 [end_timeline]

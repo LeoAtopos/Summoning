@@ -1,4 +1,23 @@
-wizzard_character: success
-????
+( THE SEAL HAS BEEN BROKEN, AND THE DOOR TO THE DEEPER LEVEL IS OPENED )
+Mmmm...I feel like...
+wizzard_character: So wonderful!
+...
+All right, wonderful in some ways.
+wizzard_character: How did you move the runes?
+wizzard_character: I could only hear some clicky noise.
+- Cause I got a keyboard?
+	wizzard_character: What is keyboard? How a key board?
+	Ah...It's too difficult to explain.
+	wizzard_character: Must be some kind of up-level magic weapon.
+	Yeah...kind of.
+- That's how Gamer casting magic
+	wizzard_character: Must be some kind of advanced magic skill.
+	You think?
+	wizzard_character: Yes, and that sounds pleasant.
+	Yeah, true.
+wizzard_character: So good, I studied summoning magic in school.
+wizzard_character: Now, I can meet such round and great Gamer magician
+Nice to meet you too, Wizzard
+NEXT LEVEL!
 do Sgm.cut2level4()
 [end_timeline]

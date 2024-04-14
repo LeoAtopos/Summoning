@@ -1,3 +1,36 @@
-waboss
-en boss
+do Sgm.call_yosha_idle()
+What? Another BALL?
+wizzard_character: I...I don't feel hostile
+Who are you?
+boss: You have proven yourself, Gamer.
+Prove what?
+boss: You got a keyboard and a mouse, then you can comment and feedback.
+wizzard_character: I don't understand.
+boss: Wizzard, you have just did your part of saving the world, this world.
+boss: By summoning Gamers again and again, you lead them to this place, to me.
+boss: You and I work together, to find those Gamers and to ask a simple question
+boss: WILL YOU COMMIT YOUR COMMENT, GAMER?
+- YES
+	Yes, of course.
+	I get it, now.
+	Every time you play a game, it's like you are summoned to a new world.
+	Your actions make that world alive. But if you want see more world, like more stories about a talent good lovely wizzard.
+	wizzard_character: ...
+	You have to do more. You have to courage someone.
+	wizzard_character: Gamer...
+	I will see you, again
+	wizzard_character: ...
+	wizzard_character: I will summon you, again!
+	do Sgm.call_goodend()
+- NO
+	No, it's ridiculous.
+	This game sucks.
+	Shitty graphics. Barely audios.
+	Waste of time.
+	And I will not waste any more.
+	boss: Well. I agree.
+	boss: Tell the all mighty creator of this world, never do these games any more.
+	boss: Our world shall not preceed. Delete those files.
+	wizzard_character: Gamer...
+	do Sgm.call_gameover()
 [end_timeline]

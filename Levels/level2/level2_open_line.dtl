@@ -1,4 +1,21 @@
-wizzard_character: OH, My Creator
-wizzard_character: Let's game
-do Sgm.call_yosha_canMove()
+wizzard_character: Yabalaha ahlahali cas pis TATAKA...
+do Sgm.level2_show_yosha()
+wizzard_character: Summoning Completed
+[wait time="1.8"]
+Oh... I see. I am the one who was summoned.
+wizzard_character: This is the creature called GAMER?
+wizzard_character: Unbelievable.
+Me too.
+wizzard_character: Now, Gamer, Go break the magic seal in the front.
+wizzard_character: Help me conquer this unbreakable dungeon.
+- No, I refuse.
+	Just for fun. How about I say No?
+	wizzard_character: Another failed summoning then
+	wizzard_character: I have to cast 「Game Over」 again.
+	WAIT, No
+	do Sgm.call_gameover()
+- OK, I like dungeons
+	Yes, my master.
+	I'll go forth
+	do Sgm.call_yosha_canMove()
 [end_timeline]

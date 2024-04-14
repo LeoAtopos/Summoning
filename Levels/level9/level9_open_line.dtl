@@ -1,3 +1,7 @@
-wow
-finally
+do Sgm.call_yosha_can_notMove()
+do Sgm.call_yosha_walk()
+Boss! Boss! Boss!
+wizzard_character: Be careful.
+Where is it?
+do Sgm.level9_open_line_done()
 [end_timeline]

@@ -1,3 +1,5 @@
-wizzard_character: what is this
+wizzard_character: Look at those Runes, Gamer.
+wizzard_character: Do you recongnize those?
+Let me check.
 do Sgm.call_yosha_canMove()
 [end_timeline]

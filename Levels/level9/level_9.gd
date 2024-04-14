@@ -2,6 +2,8 @@ extends Node2D
 
 @onready var gamer = $yosha
 @onready var wizzard = $wizzard
+
+var isOpenMoveDone = false
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	Dialogic.start("level9_open_line")
@@ -12,9 +14,12 @@ func _ready():
 	tween_gamer.tween_callback(move_in_done)
 
 func move_in_done():
-	Sgm.canMove = true
+	isOpenMoveDone = true
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
+	if isOpenMoveDone and Sgm.islvl9old:
+		Sgm.canMove = true
+
 	if gamer.position.x >= 65 and Sgm.canMove:
 		Sgm.canMove = false
 		var tween_gamer = create_tween()
@@ -22,6 +27,8 @@ func _process(delta):
 		tween_gamer.tween_property(gamer, "position", Vector2(114, 0), 1.5).set_ease(Tween.EASE_OUT)
 		tween_wizzard.tween_property(wizzard, "position", Vector2(86, 0), 1.5).set_ease(Tween.EASE_OUT)
 		tween_gamer.tween_callback(move_front_boss)
+
+		Sgm.islvl9old = false
 
 func move_front_boss():
 	var tween = create_tween()
