@@ -36,3 +36,6 @@ func cut2level7():
 
 func golf_start():
 	golf_can_go = true
+
+func cut2level9():
+	SceneManager.change_scene("res://Levels/level9/level_9.tscn",SceneManager.Transitions.FADE)

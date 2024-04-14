@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://du7ffc6jlolfh"]
+[gd_scene load_steps=21 format=3 uid="uid://du7ffc6jlolfh"]
 
 [ext_resource type="Script" path="res://Levels/level8/level_8.gd" id="1_3pmay"]
 [ext_resource type="Texture2D" uid="uid://c3hwj5rd4qtqo" path="res://Levels/level3/box.png" id="1_5cgfk"]
@@ -6,10 +6,12 @@
 [ext_resource type="Texture2D" uid="uid://bjc2sl3wobod5" path="res://Levels/level3/pusher.png" id="2_x4ncy"]
 [ext_resource type="Script" path="res://Levels/level8/Line2D.gd" id="3_ngrpf"]
 [ext_resource type="Texture2D" uid="uid://bapp3lfsok50x" path="res://Levels/level8/flag-Sheet.png" id="3_v3mvh"]
+[ext_resource type="Script" path="res://Levels/level8/ball.gd" id="4_tf6a2"]
 [ext_resource type="Script" path="res://addons/godot_state_charts/state_chart.gd" id="7_kxuoj"]
 [ext_resource type="Script" path="res://addons/godot_state_charts/compound_state.gd" id="8_kcryu"]
 [ext_resource type="Script" path="res://addons/godot_state_charts/atomic_state.gd" id="9_u1cmj"]
 [ext_resource type="Script" path="res://addons/godot_state_charts/transition.gd" id="10_8m6er"]
+[ext_resource type="Script" path="res://Levels/level8/power.gd" id="11_65c3d"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_4t2ee"]
 radius = 8.0
@@ -39,6 +41,15 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7iviu"]
+size = Vector2(30, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_u5ylv"]
+size = Vector2(185, 707)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3ivu4"]
+size = Vector2(1028, 225)
+
 [node name="Level8" type="Node2D"]
 script = ExtResource("1_3pmay")
 
@@ -61,6 +72,7 @@ script = ExtResource("3_ngrpf")
 
 [node name="ball" type="RigidBody2D" parent="."]
 position = Vector2(-265, 92)
+script = ExtResource("4_tf6a2")
 
 [node name="Sprite2D" type="Sprite2D" parent="ball"]
 scale = Vector2(0.5, 0.5)
@@ -103,7 +115,7 @@ texture = ExtResource("1_5cgfk")
 shape = SubResource("RectangleShape2D_agjix")
 
 [node name="floor4" type="StaticBody2D" parent="."]
-position = Vector2(349, 143)
+position = Vector2(357, 143)
 scale = Vector2(5, 10)
 
 [node name="Sprite2D" type="Sprite2D" parent="floor4"]
@@ -128,7 +140,7 @@ shape = SubResource("RectangleShape2D_agjix")
 position = Vector2(263, -30)
 sprite_frames = SubResource("SpriteFrames_732gk")
 autoplay = "default"
-frame_progress = 0.756893
+frame_progress = 0.0691177
 
 [node name="StateChart" type="Node" parent="."]
 script = ExtResource("7_kxuoj")
@@ -148,11 +160,39 @@ event = &"start aiming"
 [node name="aiming" type="Node" parent="StateChart/golf_state"]
 script = ExtResource("9_u1cmj")
 
+[node name="aimed" type="Node" parent="StateChart/golf_state/aiming"]
+script = ExtResource("10_8m6er")
+to = NodePath("../../powering")
+event = &"aimed"
+
 [node name="powering" type="Node" parent="StateChart/golf_state"]
 script = ExtResource("9_u1cmj")
 
+[node name="shoot" type="Node" parent="StateChart/golf_state/powering"]
+script = ExtResource("10_8m6er")
+to = NodePath("../../shooting")
+event = &"shoot"
+
 [node name="shooting" type="Node" parent="StateChart/golf_state"]
 script = ExtResource("9_u1cmj")
+
+[node name="shoot done" type="Node" parent="StateChart/golf_state/shooting"]
+script = ExtResource("10_8m6er")
+to = NodePath("../../flying")
+event = &"shoot done"
+
+[node name="flying" type="Node" parent="StateChart/golf_state"]
+script = ExtResource("9_u1cmj")
+
+[node name="no goal" type="Node" parent="StateChart/golf_state/flying"]
+script = ExtResource("10_8m6er")
+to = NodePath("../../aiming")
+event = &"no goal"
+
+[node name="goal" type="Node" parent="StateChart/golf_state/flying"]
+script = ExtResource("10_8m6er")
+to = NodePath("../../goaled")
+event = &"goal"
 
 [node name="stopped" type="Node" parent="StateChart/golf_state"]
 script = ExtResource("9_u1cmj")
@@ -160,6 +200,67 @@ script = ExtResource("9_u1cmj")
 [node name="goaled" type="Node" parent="StateChart/golf_state"]
 script = ExtResource("9_u1cmj")
 
+[node name="tip_label" type="Label" parent="."]
+modulate = Color(1, 1, 1, 0.443137)
+offset_left = -154.0
+offset_top = 68.0
+offset_right = -56.0
+offset_bottom = 91.0
+text = "space to aim"
+
+[node name="power" type="Line2D" parent="."]
+position = Vector2(-290, 92)
+points = PackedVector2Array(0, 0, 2.08165e-12, -5)
+width = 3.0
+default_color = Color(1, 0.427451, 0.239216, 1)
+script = ExtResource("11_65c3d")
+
+[node name="goalpoint" type="Area2D" parent="."]
+position = Vector2(259, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="goalpoint"]
+position = Vector2(5, 0)
+shape = SubResource("RectangleShape2D_7iviu")
+
+[node name="bound" type="Area2D" parent="."]
+position = Vector2(448, -20)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="bound"]
+position = Vector2(2.5, 0.5)
+shape = SubResource("RectangleShape2D_u5ylv")
+
+[node name="bound2" type="Area2D" parent="."]
+position = Vector2(-467, -33)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="bound2"]
+position = Vector2(2.5, 0.5)
+shape = SubResource("RectangleShape2D_u5ylv")
+
+[node name="bound3" type="Area2D" parent="."]
+position = Vector2(-197, 497)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="bound3"]
+position = Vector2(203, -137)
+shape = SubResource("RectangleShape2D_3ivu4")
+
+[node name="bound4" type="Area2D" parent="."]
+position = Vector2(-197, -226)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="bound4"]
+position = Vector2(203, -137)
+shape = SubResource("RectangleShape2D_3ivu4")
+
 [connection signal="state_entered" from="StateChart/golf_state/pause" to="." method="_on_pause_state_entered"]
 [connection signal="state_processing" from="StateChart/golf_state/pause" to="." method="_on_pause_state_processing"]
 [connection signal="state_entered" from="StateChart/golf_state/aiming" to="." method="_on_aiming_state_entered"]
+[connection signal="state_processing" from="StateChart/golf_state/aiming" to="." method="_on_aiming_state_processing"]
+[connection signal="state_entered" from="StateChart/golf_state/powering" to="." method="_on_powering_state_entered"]
+[connection signal="state_processing" from="StateChart/golf_state/powering" to="." method="_on_powering_state_processing"]
+[connection signal="state_entered" from="StateChart/golf_state/shooting" to="." method="_on_shooting_state_entered"]
+[connection signal="state_processing" from="StateChart/golf_state/flying" to="." method="_on_flying_state_processing"]
+[connection signal="state_entered" from="StateChart/golf_state/goaled" to="." method="_on_goaled_state_entered"]
+[connection signal="body_entered" from="goalpoint" to="." method="_on_goalpoint_body_entered"]
+[connection signal="body_entered" from="bound" to="." method="_on_bound_body_entered"]
+[connection signal="body_entered" from="bound2" to="." method="_on_bound_body_entered"]
+[connection signal="body_entered" from="bound3" to="." method="_on_bound_body_entered"]
+[connection signal="body_entered" from="bound4" to="." method="_on_bound_body_entered"]

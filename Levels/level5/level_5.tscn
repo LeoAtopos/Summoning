@@ -1,10 +1,12 @@
-[gd_scene load_steps=6 format=3 uid="uid://dbcgfv13wtjvj"]
+[gd_scene load_steps=8 format=3 uid="uid://dbcgfv13wtjvj"]
 
 [ext_resource type="Script" path="res://Levels/level5/level_5.gd" id="1_q86r2"]
 [ext_resource type="Script" path="res://Levels/level5/sheeps.gd" id="2_fi1vy"]
 [ext_resource type="PackedScene" uid="uid://byqnffomls235" path="res://Levels/level5/shooter.tscn" id="2_p0ds0"]
 [ext_resource type="PackedScene" uid="uid://bqyitxhdc1lqh" path="res://Levels/level5/sheep.tscn" id="3_u7i77"]
 [ext_resource type="PackedScene" uid="uid://dw4i0jk03giq5" path="res://Levels/level5/bullet.tscn" id="4_rseck"]
+[ext_resource type="Script" path="res://Levels/level5/aimline.gd" id="6_088mv"]
+[ext_resource type="Texture2D" uid="uid://b8g4yxpeflqg7" path="res://Levels/level8/break_line.png" id="6_needw"]
 
 [node name="Level5" type="Node2D"]
 script = ExtResource("1_q86r2")
@@ -36,6 +38,14 @@ position = Vector2(-161, -12)
 
 [node name="bullet" parent="." instance=ExtResource("4_rseck")]
 position = Vector2(0, 137)
+
+[node name="aimline" type="Line2D" parent="."]
+position = Vector2(0, 138)
+points = PackedVector2Array(0, 0, 140, 2.08165e-12)
+width = 9.0
+texture = ExtResource("6_needw")
+texture_mode = 2
+script = ExtResource("6_088mv")
 
 [node name="shooter" parent="." instance=ExtResource("2_p0ds0")]
 position = Vector2(0, 138)
