@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://b0l82hm3vvi0t"]
+
+[ext_resource type="Texture2D" uid="uid://c3hwj5rd4qtqo" path="res://Levels/level3/box.png" id="1_neab5"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_42f12"]
+size = Vector2(30.675, 31.775)
+
+[node name="floor" type="StaticBody2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_42f12")
+debug_color = Color(1, 1, 1, 1)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(0, 0.462745, 0.309804, 1)
+texture = ExtResource("1_neab5")

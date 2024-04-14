@@ -1,6 +1,10 @@
-[gd_scene load_steps=2 format=3 uid="uid://dbcgfv13wtjvj"]
+[gd_scene load_steps=6 format=3 uid="uid://dbcgfv13wtjvj"]
 
 [ext_resource type="Script" path="res://Levels/level5/level_5.gd" id="1_q86r2"]
+[ext_resource type="Script" path="res://Levels/level5/sheeps.gd" id="2_fi1vy"]
+[ext_resource type="PackedScene" uid="uid://byqnffomls235" path="res://Levels/level5/shooter.tscn" id="2_p0ds0"]
+[ext_resource type="PackedScene" uid="uid://bqyitxhdc1lqh" path="res://Levels/level5/sheep.tscn" id="3_u7i77"]
+[ext_resource type="PackedScene" uid="uid://dw4i0jk03giq5" path="res://Levels/level5/bullet.tscn" id="4_rseck"]
 
 [node name="Level5" type="Node2D"]
 script = ExtResource("1_q86r2")
@@ -11,3 +15,27 @@ zoom = Vector2(3, 3)
 position_smoothing_speed = 50.0
 drag_horizontal_enabled = true
 drag_vertical_enabled = true
+
+[node name="sheeps" type="Node2D" parent="."]
+script = ExtResource("2_fi1vy")
+
+[node name="sheep" parent="sheeps" instance=ExtResource("3_u7i77")]
+position = Vector2(-94, -85)
+
+[node name="sheep2" parent="sheeps" instance=ExtResource("3_u7i77")]
+position = Vector2(105, -86)
+
+[node name="sheep3" parent="sheeps" instance=ExtResource("3_u7i77")]
+position = Vector2(275, -152)
+
+[node name="sheep4" parent="sheeps" instance=ExtResource("3_u7i77")]
+position = Vector2(-48, -150)
+
+[node name="sheep5" parent="sheeps" instance=ExtResource("3_u7i77")]
+position = Vector2(-161, -12)
+
+[node name="bullet" parent="." instance=ExtResource("4_rseck")]
+position = Vector2(0, 137)
+
+[node name="shooter" parent="." instance=ExtResource("2_p0ds0")]
+position = Vector2(0, 138)

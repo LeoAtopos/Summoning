@@ -1,0 +1,165 @@
+[gd_scene load_steps=16 format=3 uid="uid://du7ffc6jlolfh"]
+
+[ext_resource type="Script" path="res://Levels/level8/level_8.gd" id="1_3pmay"]
+[ext_resource type="Texture2D" uid="uid://c3hwj5rd4qtqo" path="res://Levels/level3/box.png" id="1_5cgfk"]
+[ext_resource type="Texture2D" uid="uid://b8g4yxpeflqg7" path="res://Levels/level8/break_line.png" id="2_fce8g"]
+[ext_resource type="Texture2D" uid="uid://bjc2sl3wobod5" path="res://Levels/level3/pusher.png" id="2_x4ncy"]
+[ext_resource type="Script" path="res://Levels/level8/Line2D.gd" id="3_ngrpf"]
+[ext_resource type="Texture2D" uid="uid://bapp3lfsok50x" path="res://Levels/level8/flag-Sheet.png" id="3_v3mvh"]
+[ext_resource type="Script" path="res://addons/godot_state_charts/state_chart.gd" id="7_kxuoj"]
+[ext_resource type="Script" path="res://addons/godot_state_charts/compound_state.gd" id="8_kcryu"]
+[ext_resource type="Script" path="res://addons/godot_state_charts/atomic_state.gd" id="9_u1cmj"]
+[ext_resource type="Script" path="res://addons/godot_state_charts/transition.gd" id="10_8m6er"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_4t2ee"]
+radius = 8.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_agjix"]
+size = Vector2(32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3ox7g"]
+atlas = ExtResource("3_v3mvh")
+region = Rect2(0, 0, 16, 60)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2glnu"]
+atlas = ExtResource("3_v3mvh")
+region = Rect2(16, 0, 16, 60)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_732gk"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3ox7g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2glnu")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Level8" type="Node2D"]
+script = ExtResource("1_3pmay")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+visibility_layer = 7
+zoom = Vector2(3, 3)
+position_smoothing_speed = 50.0
+drag_horizontal_enabled = true
+drag_vertical_enabled = true
+
+[node name="arrow" type="Line2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(-265, 92)
+points = PackedVector2Array(0, 0, 85, 2.08165e-12)
+width = 9.0
+texture = ExtResource("2_fce8g")
+texture_mode = 2
+end_cap_mode = 1
+script = ExtResource("3_ngrpf")
+
+[node name="ball" type="RigidBody2D" parent="."]
+position = Vector2(-265, 92)
+
+[node name="Sprite2D" type="Sprite2D" parent="ball"]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_x4ncy")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ball"]
+shape = SubResource("CircleShape2D_4t2ee")
+
+[node name="floor" type="StaticBody2D" parent="."]
+position = Vector2(-179, 180)
+scale = Vector2(20, 5)
+
+[node name="Sprite2D" type="Sprite2D" parent="floor"]
+modulate = Color(0.113725, 0.482353, 0.0588235, 1)
+texture = ExtResource("1_5cgfk")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="floor"]
+shape = SubResource("RectangleShape2D_agjix")
+
+[node name="floor3" type="StaticBody2D" parent="."]
+position = Vector2(320, -180)
+scale = Vector2(20, 5)
+
+[node name="Sprite2D" type="Sprite2D" parent="floor3"]
+modulate = Color(0.113725, 0.482353, 0.0588235, 1)
+texture = ExtResource("1_5cgfk")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="floor3"]
+shape = SubResource("RectangleShape2D_agjix")
+
+[node name="floor2" type="StaticBody2D" parent="."]
+position = Vector2(121, 143)
+scale = Vector2(8, 10)
+
+[node name="Sprite2D" type="Sprite2D" parent="floor2"]
+modulate = Color(0.113725, 0.482353, 0.0588235, 1)
+texture = ExtResource("1_5cgfk")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="floor2"]
+shape = SubResource("RectangleShape2D_agjix")
+
+[node name="floor4" type="StaticBody2D" parent="."]
+position = Vector2(349, 143)
+scale = Vector2(5, 10)
+
+[node name="Sprite2D" type="Sprite2D" parent="floor4"]
+modulate = Color(0.113725, 0.482353, 0.0588235, 1)
+texture = ExtResource("1_5cgfk")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="floor4"]
+shape = SubResource("RectangleShape2D_agjix")
+
+[node name="floor5" type="StaticBody2D" parent="."]
+position = Vector2(283, 160)
+scale = Vector2(5, 10)
+
+[node name="Sprite2D" type="Sprite2D" parent="floor5"]
+modulate = Color(0.113725, 0.482353, 0.0588235, 1)
+texture = ExtResource("1_5cgfk")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="floor5"]
+shape = SubResource("RectangleShape2D_agjix")
+
+[node name="flag" type="AnimatedSprite2D" parent="."]
+position = Vector2(263, -30)
+sprite_frames = SubResource("SpriteFrames_732gk")
+autoplay = "default"
+frame_progress = 0.756893
+
+[node name="StateChart" type="Node" parent="."]
+script = ExtResource("7_kxuoj")
+
+[node name="golf_state" type="Node" parent="StateChart"]
+script = ExtResource("8_kcryu")
+initial_state = NodePath("pause")
+
+[node name="pause" type="Node" parent="StateChart/golf_state"]
+script = ExtResource("9_u1cmj")
+
+[node name="start aiming" type="Node" parent="StateChart/golf_state/pause"]
+script = ExtResource("10_8m6er")
+to = NodePath("../../aiming")
+event = &"start aiming"
+
+[node name="aiming" type="Node" parent="StateChart/golf_state"]
+script = ExtResource("9_u1cmj")
+
+[node name="powering" type="Node" parent="StateChart/golf_state"]
+script = ExtResource("9_u1cmj")
+
+[node name="shooting" type="Node" parent="StateChart/golf_state"]
+script = ExtResource("9_u1cmj")
+
+[node name="stopped" type="Node" parent="StateChart/golf_state"]
+script = ExtResource("9_u1cmj")
+
+[node name="goaled" type="Node" parent="StateChart/golf_state"]
+script = ExtResource("9_u1cmj")
+
+[connection signal="state_entered" from="StateChart/golf_state/pause" to="." method="_on_pause_state_entered"]
+[connection signal="state_processing" from="StateChart/golf_state/pause" to="." method="_on_pause_state_processing"]
+[connection signal="state_entered" from="StateChart/golf_state/aiming" to="." method="_on_aiming_state_entered"]

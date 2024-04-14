@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://brjt8jvcf7o16"
-path="res://.godot/imported/yosha-Sheet.png-f5575566b6a266ce0c73683607a498c1.ctex"
+path="res://.godot/imported/yosha-Sheet.png-6a7e0586dadba77531848df7747e7fbd.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Main/yosha/yosha-Sheet.png"
-dest_files=["res://.godot/imported/yosha-Sheet.png-f5575566b6a266ce0c73683607a498c1.ctex"]
+source_file="res://main/yosha/yosha-Sheet.png"
+dest_files=["res://.godot/imported/yosha-Sheet.png-6a7e0586dadba77531848df7747e7fbd.ctex"]
 
 [params]
 

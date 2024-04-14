@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://bqyitxhdc1lqh"]
+
+[ext_resource type="Texture2D" uid="uid://taslhuby7qyo" path="res://Levels/level3/target.png" id="1_ebj2m"]
+[ext_resource type="Script" path="res://Levels/level5/sheep.gd" id="1_hhaoh"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_g2nu6"]
+radius = 18.0
+
+[node name="sheep" type="Area2D"]
+script = ExtResource("1_hhaoh")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -2)
+texture = ExtResource("1_ebj2m")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_g2nu6")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

@@ -2,6 +2,7 @@ extends Node
 
 var gamer
 var canMove :bool = false
+var golf_can_go :bool = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -26,3 +27,12 @@ func cut2level4():
 
 func level4_call_help():
 	get_node("/root/Level4").wizzard_jump_in()
+
+func cut2level6():
+	SceneManager.change_scene("res://Levels/level6/level_6.tscn",SceneManager.Transitions.FADE)
+
+func cut2level7():
+	SceneManager.change_scene("res://Levels/level7/level_7.tscn",SceneManager.Transitions.FADE)
+
+func golf_start():
+	golf_can_go = true

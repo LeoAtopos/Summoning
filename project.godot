@@ -29,8 +29,8 @@ config/icon="res://icon.svg"
 
 GuiTransitions="*res://addons/simple-gui-transitions/singleton.gd"
 SceneManager="*res://addons/awesome_scene_manager/autoloads/SceneManager.tscn"
-Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
 Sgm="*res://Main/SGM.gd"
+Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
 
 [dialogic]
 
@@ -46,6 +46,10 @@ directories/dtl_directory={
 "level4_middel_line": "res://Levels/level4/level4_middel_line.dtl",
 "level4_open_line": "res://Levels/level4/level4_open_line.dtl",
 "level5_open_line": "res://Levels/level5/level5_open_line.dtl",
+"level5_out_line": "res://Levels/level5/level5_out_line.dtl",
+"level6_line": "res://Levels/level6/level6_line.dtl",
+"level7_open_line": "res://Levels/level7/level7_open_line.dtl",
+"level8_open_line": "res://Levels/level8/level8_open_line.dtl",
 "open_line": "res://Levels/level1/open_line.dtl"
 }
 
